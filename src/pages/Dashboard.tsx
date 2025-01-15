@@ -1,3 +1,5 @@
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -5,7 +7,6 @@ import {
   Book,
   Calendar,
   ChevronRight,
-  Bell,
   Users,
   Bookmark,
   GraduationCap,
@@ -13,35 +14,11 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Footer } from "@/components/layout/Footer";
 
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Header */}
-      <header className="border-b bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold text-primary">ConnectED</h1>
-            <nav className="hidden md:flex space-x-6">
-              <Link to="/internships" className="text-gray-600 hover:text-primary">Internships</Link>
-              <Link to="/gigs" className="text-gray-600 hover:text-primary">Freelance Gigs</Link>
-              <Link to="/scholarships" className="text-gray-600 hover:text-primary">Scholarships</Link>
-              <Link to="/mentors" className="text-gray-600 hover:text-primary">Find Mentors</Link>
-            </nav>
-          </div>
-          <div className="flex items-center space-x-4">
-            <Bell className="h-5 w-5 text-gray-600 cursor-pointer" />
-            <Avatar>
-              <AvatarImage src="/placeholder-student.jpg" />
-              <AvatarFallback>ST</AvatarFallback>
-            </Avatar>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
+      <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
@@ -260,8 +237,6 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
       <Footer />
     </div>
   );
