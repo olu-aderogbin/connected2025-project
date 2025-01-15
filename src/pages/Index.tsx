@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { GraduationCap, Briefcase, Users, BookOpen, ArrowRight, Mail, Lock } from "lucide-react";
+import { GraduationCap, Briefcase, Users, BookOpen, ArrowRight, Mail, Lock, Target, Award, DollarSign, BookmarkCheck, Lightbulb, Shield, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -37,57 +37,147 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-accent/5 to-white">
+      <section className="py-20 bg-gradient-to-b from-[#E5DEFF] to-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-5xl font-bold text-accent">Connect, Learn, and Earn</h2>
+            <h2 className="text-5xl font-bold text-accent">
+              <span className="text-[#8B5CF6]">Connect</span>, Learn, and{" "}
+              <span className="text-[#F97316]">Earn</span>
+            </h2>
             <p className="text-xl text-gray-600">
-              Your all-in-one platform for students to find internships, freelance opportunities, 
-              mentorship, and scholarships.
+              ConnectED is your gateway to success. Whether you're a student seeking opportunities or a freelancer looking for gigs, we've got you covered with internships, mentorship, scholarships, and freelance work.
             </p>
             <div className="flex gap-4">
               <Link to="/signup">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="bg-[#9b87f5] hover:bg-[#7E69AB] gap-2">
                   Get Started <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline">Learn More</Button>
+              <Button size="lg" variant="outline" className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#E5DEFF]">
+                Learn More
+              </Button>
             </div>
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
               alt="Students collaborating" 
               className="rounded-lg shadow-2xl"
             />
+            <div className="absolute -bottom-4 -right-4 bg-[#FDE1D3] p-6 rounded-lg shadow-lg">
+              <p className="text-lg font-semibold text-[#F97316]">Join 10,000+ students & freelancers</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Stats Section */}
+      <section className="py-12 bg-[#F2FCE2]">
+        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-bold text-[#0EA5E9]">10K+</p>
+            <p className="text-gray-600">Active Users</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-[#D946EF]">5K+</p>
+            <p className="text-gray-600">Available Opportunities</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-[#8B5CF6]">1K+</p>
+            <p className="text-gray-600">Successful Matches</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-[#F97316]">95%</p>
+            <p className="text-gray-600">Satisfaction Rate</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center mb-12">Everything You Need to Succeed</h3>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="p-6 bg-white rounded-lg border hover:shadow-lg transition">
-              <GraduationCap className="h-12 w-12 text-primary mb-4" />
-              <h4 className="text-xl font-semibold mb-2">Internships</h4>
-              <p className="text-gray-600">Find relevant internships that align with your career goals</p>
+          <h3 className="text-3xl font-bold text-center mb-12">Platform Features</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 bg-[#D3E4FD] rounded-lg hover:shadow-lg transition">
+              <Target className="h-12 w-12 text-[#0EA5E9] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Smart Matching</h4>
+              <p className="text-gray-600">AI-powered matching system connects you with the perfect opportunities based on your skills and preferences.</p>
             </div>
-            <div className="p-6 bg-white rounded-lg border hover:shadow-lg transition">
-              <Briefcase className="h-12 w-12 text-primary mb-4" />
-              <h4 className="text-xl font-semibold mb-2">Freelance Gigs</h4>
-              <p className="text-gray-600">Earn while you learn with flexible freelance opportunities</p>
+            <div className="p-6 bg-[#FFDEE2] rounded-lg hover:shadow-lg transition">
+              <Award className="h-12 w-12 text-[#D946EF] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Verified Opportunities</h4>
+              <p className="text-gray-600">All listings are verified to ensure quality and legitimacy of opportunities.</p>
             </div>
-            <div className="p-6 bg-white rounded-lg border hover:shadow-lg transition">
-              <Users className="h-12 w-12 text-primary mb-4" />
-              <h4 className="text-xl font-semibold mb-2">Mentorship</h4>
-              <p className="text-gray-600">Connect with industry professionals for guidance</p>
+            <div className="p-6 bg-[#FEF7CD] rounded-lg hover:shadow-lg transition">
+              <DollarSign className="h-12 w-12 text-[#F97316] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Secure Payments</h4>
+              <p className="text-gray-600">Protected payment system ensures safe transactions for all freelance work.</p>
             </div>
-            <div className="p-6 bg-white rounded-lg border hover:shadow-lg transition">
-              <BookOpen className="h-12 w-12 text-primary mb-4" />
-              <h4 className="text-xl font-semibold mb-2">Scholarships</h4>
-              <p className="text-gray-600">Discover financial aid opportunities for your education</p>
+            <div className="p-6 bg-[#E5DEFF] rounded-lg hover:shadow-lg transition">
+              <BookmarkCheck className="h-12 w-12 text-[#8B5CF6] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Progress Tracking</h4>
+              <p className="text-gray-600">Monitor your applications, projects, and learning journey in real-time.</p>
+            </div>
+            <div className="p-6 bg-[#FEC6A1] rounded-lg hover:shadow-lg transition">
+              <Lightbulb className="h-12 w-12 text-[#F97316] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Skill Development</h4>
+              <p className="text-gray-600">Access resources and recommendations to enhance your professional skills.</p>
+            </div>
+            <div className="p-6 bg-[#FDE1D3] rounded-lg hover:shadow-lg transition">
+              <Shield className="h-12 w-12 text-[#0EA5E9] mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Verified Profiles</h4>
+              <p className="text-gray-600">Build trust with verified profiles and reviews from the community.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* User Types Section */}
+      <section className="py-20 bg-[#E5DEFF]">
+        <div className="container mx-auto px-4">
+          <h3 className="text-3xl font-bold text-center mb-12">Who It's For</h3>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <GraduationCap className="h-16 w-16 text-[#8B5CF6] mb-6" />
+              <h4 className="text-2xl font-bold mb-4">For Students</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-2">
+                  <BarChart className="h-6 w-6 text-[#D946EF] flex-shrink-0" />
+                  <span>Find relevant internships and freelance opportunities</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Users className="h-6 w-6 text-[#D946EF] flex-shrink-0" />
+                  <span>Connect with industry mentors for career guidance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <BookOpen className="h-6 w-6 text-[#D946EF] flex-shrink-0" />
+                  <span>Discover scholarships matching your profile</span>
+                </li>
+              </ul>
+              <Link to="/signup" className="mt-6 inline-block">
+                <Button className="bg-[#8B5CF6] hover:bg-[#7E69AB]">Join as Student</Button>
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <Briefcase className="h-16 w-16 text-[#F97316] mb-6" />
+              <h4 className="text-2xl font-bold mb-4">For Freelancers</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-2">
+                  <Target className="h-6 w-6 text-[#F97316] flex-shrink-0" />
+                  <span>Access curated freelance opportunities</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Shield className="h-6 w-6 text-[#F97316] flex-shrink-0" />
+                  <span>Secure payment protection and milestone tracking</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Award className="h-6 w-6 text-[#F97316] flex-shrink-0" />
+                  <span>Build your portfolio and client network</span>
+                </li>
+              </ul>
+              <Link to="/signup" className="mt-6 inline-block">
+                <Button className="bg-[#F97316] hover:bg-[#EA580C]">Join as Freelancer</Button>
+              </Link>
             </div>
           </div>
         </div>
