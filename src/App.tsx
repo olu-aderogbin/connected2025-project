@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Signup from "./pages/Signup";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Dashboard from "./pages/Dashboard";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/freelancer-dashboard" element={<FreelancerDashboard />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

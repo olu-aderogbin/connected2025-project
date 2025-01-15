@@ -2,19 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Award,
-  Briefcase,
-  Calendar,
-  DollarSign,
-  MessageSquare,
-  User,
   Book,
-  Star,
-  FileText,
-  Clock,
+  Calendar,
+  ChevronRight,
   Bell,
   Users,
   Bookmark,
-  ChevronRight,
+  GraduationCap,
+  Briefcase,
+  MessageSquare,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -28,16 +24,17 @@ const Dashboard = () => {
           <div className="flex items-center space-x-8">
             <h1 className="text-2xl font-bold text-primary">ConnectED</h1>
             <nav className="hidden md:flex space-x-6">
-              <Link to="/jobs" className="text-gray-600 hover:text-primary">Find Jobs</Link>
-              <Link to="/courses" className="text-gray-600 hover:text-primary">Courses</Link>
-              <Link to="/community" className="text-gray-600 hover:text-primary">Community</Link>
+              <Link to="/internships" className="text-gray-600 hover:text-primary">Internships</Link>
+              <Link to="/gigs" className="text-gray-600 hover:text-primary">Freelance Gigs</Link>
+              <Link to="/scholarships" className="text-gray-600 hover:text-primary">Scholarships</Link>
+              <Link to="/mentors" className="text-gray-600 hover:text-primary">Find Mentors</Link>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <Bell className="h-5 w-5 text-gray-600" />
+            <Bell className="h-5 w-5 text-gray-600 cursor-pointer" />
             <Avatar>
-              <AvatarImage src="/placeholder.svg" />
-              <AvatarFallback>JD</AvatarFallback>
+              <AvatarImage src="/placeholder-student.jpg" />
+              <AvatarFallback>ST</AvatarFallback>
             </Avatar>
           </div>
         </div>
@@ -46,44 +43,36 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
-        <div className="mb-8 flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Welcome back, John!</h1>
-            <p className="text-gray-600">Here's what's happening with your account today.</p>
-          </div>
-          <Button variant="outline" asChild>
-            <Link to="/profile">
-              <User className="mr-2 h-4 w-4" />
-              View Profile
-            </Link>
-          </Button>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Welcome back, Alex!</h1>
+          <p className="text-gray-600">Track your academic and professional journey</p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Active Projects</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">Active Applications</CardTitle>
               <Briefcase className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">3</div>
-              <p className="text-xs text-gray-600">2 due this week</p>
+              <div className="text-2xl font-bold">5</div>
+              <p className="text-xs text-gray-600">3 internships, 2 gigs</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Total Earnings</CardTitle>
-              <DollarSign className="h-4 w-4 text-primary" />
+              <CardTitle className="text-sm font-medium text-gray-500">Mentor Sessions</CardTitle>
+              <Users className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$2,450</div>
-              <p className="text-xs text-gray-600">+18% from last month</p>
+              <div className="text-2xl font-bold">2</div>
+              <p className="text-xs text-gray-600">Next session tomorrow</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Course Progress</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">Skill Progress</CardTitle>
               <Book className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
@@ -93,12 +82,12 @@ const Dashboard = () => {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Profile Views</CardTitle>
-              <Users className="h-4 w-4 text-primary" />
+              <CardTitle className="text-sm font-medium text-gray-500">Scholarship Matches</CardTitle>
+              <GraduationCap className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">142</div>
-              <p className="text-xs text-gray-600">+22% this week</p>
+              <div className="text-2xl font-bold">8</div>
+              <p className="text-xs text-gray-600">3 new matches</p>
             </CardContent>
           </Card>
         </div>
@@ -107,35 +96,35 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Current Projects */}
+            {/* Application Status */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Current Projects</CardTitle>
+                <CardTitle className="text-xl">Application Status</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {[
                     {
-                      title: "E-commerce Website Redesign",
-                      client: "TechCorp Inc.",
-                      deadline: "Due in 3 days",
-                      progress: 75,
+                      title: "Summer Internship - Tech Corp",
+                      type: "Internship",
+                      status: "Interview Scheduled",
+                      date: "Mar 15, 2024",
                     },
                     {
-                      title: "Mobile App Development",
-                      client: "StartUp Labs",
-                      deadline: "Due in 1 week",
-                      progress: 45,
+                      title: "Web Development Project",
+                      type: "Freelance Gig",
+                      status: "Application Review",
+                      date: "Mar 12, 2024",
                     },
-                  ].map((project) => (
-                    <div key={project.title} className="flex items-center justify-between p-4 border rounded-lg">
+                  ].map((application) => (
+                    <div key={application.title} className="flex items-center justify-between p-4 border rounded-lg">
                       <div className="space-y-1">
-                        <h3 className="font-medium">{project.title}</h3>
-                        <p className="text-sm text-gray-600">{project.client}</p>
+                        <h3 className="font-medium">{application.title}</h3>
+                        <p className="text-sm text-gray-600">{application.type}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-medium text-primary">{project.deadline}</p>
-                        <p className="text-sm text-gray-600">{project.progress}% Complete</p>
+                        <p className="text-sm font-medium text-primary">{application.status}</p>
+                        <p className="text-sm text-gray-600">{application.date}</p>
                       </div>
                     </div>
                   ))}
@@ -143,35 +132,35 @@ const Dashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Recent Activity */}
+            {/* Recommended Opportunities */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Recent Activity</CardTitle>
+                <CardTitle className="text-xl">Recommended For You</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {[
                     {
-                      icon: Star,
-                      title: "New client review received",
-                      time: "2 hours ago",
+                      title: "Frontend Developer Internship",
+                      company: "Innovation Labs",
+                      match: "95% match",
+                      type: "Internship",
                     },
                     {
-                      icon: DollarSign,
-                      title: "Payment received for Project X",
-                      time: "5 hours ago",
+                      title: "UI/UX Design Project",
+                      company: "Creative Studio",
+                      match: "88% match",
+                      type: "Freelance",
                     },
-                    {
-                      icon: MessageSquare,
-                      title: "New message from Client Y",
-                      time: "1 day ago",
-                    },
-                  ].map((activity) => (
-                    <div key={activity.title} className="flex items-center space-x-4">
-                      <activity.icon className="h-8 w-8 p-1.5 bg-primary/10 text-primary rounded-full" />
-                      <div>
-                        <p className="font-medium">{activity.title}</p>
-                        <p className="text-sm text-gray-600">{activity.time}</p>
+                  ].map((opportunity) => (
+                    <div key={opportunity.title} className="flex items-center justify-between p-4 border rounded-lg">
+                      <div className="space-y-1">
+                        <h3 className="font-medium">{opportunity.title}</h3>
+                        <p className="text-sm text-gray-600">{opportunity.company}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-medium text-green-600">{opportunity.match}</p>
+                        <p className="text-sm text-gray-600">{opportunity.type}</p>
                       </div>
                     </div>
                   ))}
@@ -182,30 +171,31 @@ const Dashboard = () => {
 
           {/* Right Column */}
           <div className="space-y-8">
-            {/* Upcoming Deadlines */}
+            {/* Upcoming Events */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Upcoming Deadlines</CardTitle>
+                <CardTitle className="text-xl">Upcoming Events</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Project Milestone",
-                      date: "Tomorrow, 5:00 PM",
-                      priority: "high",
+                      title: "Tech Career Fair",
+                      date: "Mar 20, 2024",
+                      type: "Virtual Event",
                     },
                     {
-                      title: "Client Meeting",
-                      date: "Wed, 10:00 AM",
-                      priority: "medium",
+                      title: "Mentor Session",
+                      date: "Mar 15, 2024",
+                      type: "1:1 Meeting",
                     },
-                  ].map((deadline) => (
-                    <div key={deadline.title} className="flex items-center space-x-4">
-                      <Clock className="h-4 w-4 text-primary" />
+                  ].map((event) => (
+                    <div key={event.title} className="flex items-center space-x-4">
+                      <Calendar className="h-4 w-4 text-primary" />
                       <div>
-                        <p className="font-medium">{deadline.title}</p>
-                        <p className="text-sm text-gray-600">{deadline.date}</p>
+                        <p className="font-medium">{event.title}</p>
+                        <p className="text-sm text-gray-600">{event.date}</p>
+                        <p className="text-xs text-primary">{event.type}</p>
                       </div>
                     </div>
                   ))}
@@ -213,57 +203,56 @@ const Dashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Skills & Certifications */}
+            {/* Skill Development */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Skills & Certifications</CardTitle>
+                <CardTitle className="text-xl">Skill Development</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {["React", "TypeScript", "Node.js", "UI/UX", "AWS"].map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>React Development</span>
+                      <span className="text-primary">85%</span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full">
+                      <div className="h-full bg-primary rounded-full" style={{ width: "85%" }} />
+                    </div>
                   </div>
-                  <div className="pt-4 border-t">
-                    <h4 className="font-medium mb-2">Recent Certifications</h4>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm">AWS Solutions Architect</span>
-                        <span className="text-xs text-gray-600">2023</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm">React Advanced Concepts</span>
-                        <span className="text-xs text-gray-600">2023</span>
-                      </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>UI/UX Design</span>
+                      <span className="text-primary">60%</span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full">
+                      <div className="h-full bg-primary rounded-full" style={{ width: "60%" }} />
                     </div>
                   </div>
                 </div>
+                <Button className="w-full mt-4" variant="outline">
+                  View Skill Report
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
               </CardContent>
             </Card>
 
-            {/* Quick Actions */}
+            {/* Quick Links */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Quick Actions</CardTitle>
+                <CardTitle className="text-xl">Quick Links</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 <Button className="w-full justify-between" variant="outline">
-                  Find New Projects
-                  <ChevronRight className="h-4 w-4" />
+                  Browse Scholarships
+                  <GraduationCap className="h-4 w-4" />
                 </Button>
                 <Button className="w-full justify-between" variant="outline">
-                  View Messages
-                  <ChevronRight className="h-4 w-4" />
+                  Message Mentors
+                  <MessageSquare className="h-4 w-4" />
                 </Button>
                 <Button className="w-full justify-between" variant="outline">
-                  Update Portfolio
-                  <ChevronRight className="h-4 w-4" />
+                  Saved Opportunities
+                  <Bookmark className="h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -284,9 +273,9 @@ const Dashboard = () => {
             <div>
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to="/jobs">Find Jobs</Link></li>
-                <li><Link to="/courses">Browse Courses</Link></li>
-                <li><Link to="/community">Community</Link></li>
+                <li><Link to="/internships">Find Internships</Link></li>
+                <li><Link to="/scholarships">Scholarships</Link></li>
+                <li><Link to="/mentors">Find Mentors</Link></li>
               </ul>
             </div>
             <div>
@@ -294,7 +283,7 @@ const Dashboard = () => {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><Link to="/help">Help Center</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/careers">Careers</Link></li>
+                <li><Link to="/events">Events</Link></li>
               </ul>
             </div>
             <div>
