@@ -8,6 +8,10 @@ import Signup from "./pages/Signup";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Dashboard from "./pages/Dashboard";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import Blog from "./pages/Blog";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +27,10 @@ const App = () => (
           <Route path="/password-recovery" element={<PasswordRecovery />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/freelancer-dashboard" element={<FreelancerDashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
