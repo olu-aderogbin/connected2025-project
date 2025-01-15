@@ -65,12 +65,12 @@ const Index = () => {
               <input type="checkbox" className="rounded border-gray-300" />
               <span>Remember me</span>
             </label>
-            <a
-              href="#"
+            <Link
+              to="/password-recovery"
               className="text-sm text-primary hover:text-primary/80 transition-colors"
             >
               Forgot password?
-            </a>
+            </Link>
           </div>
 
           <Button
