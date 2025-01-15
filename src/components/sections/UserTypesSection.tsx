@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { 
-  Award, BarChart, BookOpen, Briefcase, Building2, GraduationCap, 
-  HeartHandshake, Shield, Target, Users, Lightbulb, MessageSquare,
-  BookmarkCheck, DollarSign, UserCheck, FileSpreadsheet
+  GraduationCap, Building2, BookOpen, HeartHandshake, Briefcase,
+  Users, Shield, Target, Award, DollarSign, BookmarkCheck, 
+  Lightbulb, MessageSquare, BarChart, FileSpreadsheet, UserCheck
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -18,8 +18,8 @@ export const UserTypesSection = () => {
             <h4 className="text-2xl font-bold mb-4">For Students</h4>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-2">
-                <BarChart className="h-6 w-6 text-[#8B5CF6] flex-shrink-0" />
-                <span>Create profile & showcase skills</span>
+                <Target className="h-6 w-6 text-[#8B5CF6] flex-shrink-0" />
+                <span>Find internships & freelance work</span>
               </li>
               <li className="flex items-start gap-2">
                 <Users className="h-6 w-6 text-[#8B5CF6] flex-shrink-0" />
@@ -27,11 +27,11 @@ export const UserTypesSection = () => {
               </li>
               <li className="flex items-start gap-2">
                 <BookOpen className="h-6 w-6 text-[#8B5CF6] flex-shrink-0" />
-                <span>Access scholarships & internships</span>
+                <span>Access scholarships & resources</span>
               </li>
               <li className="flex items-start gap-2">
                 <Lightbulb className="h-6 w-6 text-[#8B5CF6] flex-shrink-0" />
-                <span>Track progress & skill development</span>
+                <span>Track progress & development</span>
               </li>
             </ul>
             <Link to="/signup" className="inline-block">
@@ -68,7 +68,7 @@ export const UserTypesSection = () => {
 
           {/* Institution Representatives Card */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-            <BookmarkCheck className="h-16 w-6 text-[#0EA5E9] mb-6" />
+            <BookmarkCheck className="h-16 w-16 text-[#0EA5E9] mb-6" />
             <h4 className="text-2xl font-bold mb-4">For Institutions</h4>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-2">
