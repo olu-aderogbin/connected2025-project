@@ -8,6 +8,9 @@ import Signup from "./pages/Signup";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Dashboard from "./pages/Dashboard";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
+import EmployerDashboard from "./pages/EmployerDashboard";
+import MentorDashboard from "./pages/MentorDashboard";
+import CareerOfficerDashboard from "./pages/CareerOfficerDashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/password-recovery" element={<PasswordRecovery />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/freelancer-dashboard" element={<FreelancerDashboard />} />
+          <Route path="/employer-dashboard" element={<EmployerDashboard />} />
+          <Route path="/mentor-dashboard" element={<MentorDashboard />} />
+          <Route path="/career-officer-dashboard" element={<CareerOfficerDashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />

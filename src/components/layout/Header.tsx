@@ -51,8 +51,8 @@ export const Header = () => {
                       <Link to="/signup?type=employer" className="block text-sm hover:text-primary">
                         For Employers
                       </Link>
-                      <Link to="/signup?type=institution" className="block text-sm hover:text-primary">
-                        For Institutions
+                      <Link to="/signup?type=career-officer" className="block text-sm hover:text-primary">
+                        For Career Officers
                       </Link>
                       <Link to="/signup?type=mentor" className="block text-sm hover:text-primary">
                         For Mentors
