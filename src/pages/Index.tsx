@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Lock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,6 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the login logic
     toast({
       title: "Login Attempted",
       description: "This is a demo login page. Backend integration pending.",
@@ -85,12 +85,12 @@ const Index = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="text-secondary hover:text-secondary/80 font-semibold transition-colors"
             >
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
