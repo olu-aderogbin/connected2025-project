@@ -18,6 +18,8 @@ import Blog from "./pages/Blog";
 import HelpCenter from "./pages/HelpCenter";
 import UserProfile from "./pages/UserProfile";
 import ProfileEdit from "./pages/ProfileEdit";
+import Notifications from "./pages/Notifications";
+import MessagingInbox from "./pages/MessagingInbox";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,8 @@ const App = () => (
           <Route path="/help" element={<HelpCenter />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/profile/edit" element={<ProfileEdit />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/messages" element={<MessagingInbox />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
