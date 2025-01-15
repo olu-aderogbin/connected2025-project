@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Footer } from "@/components/layout/Footer";
 import {
   Table,
   TableBody,
@@ -23,7 +24,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const MentorDashboard = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-8">
@@ -43,8 +44,8 @@ const MentorDashboard = () => {
           </div>
         </div>
       </header>
-
-      <main className="container mx-auto px-4 py-8">
+      <div className="flex-grow">
+        <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Welcome back, Dr. Williams!</h1>
           <p className="text-gray-600">Your mentoring dashboard</p>
@@ -226,7 +227,9 @@ const MentorDashboard = () => {
             </Card>
           </div>
         </div>
-      </main>
+        </main>
+      </div>
+      <Footer />
     </div>
   );
 };

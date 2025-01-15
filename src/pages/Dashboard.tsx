@@ -14,10 +14,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Footer } from "@/components/layout/Footer";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -41,7 +42,7 @@ const Dashboard = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Welcome back, Alex!</h1>
@@ -261,45 +262,7 @@ const Dashboard = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white mt-16">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">ConnectED</h3>
-              <p className="text-gray-400 text-sm">
-                Connecting students with opportunities.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to="/internships">Find Internships</Link></li>
-                <li><Link to="/scholarships">Scholarships</Link></li>
-                <li><Link to="/mentors">Find Mentors</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to="/help">Help Center</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/events">Events</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>support@connected.com</li>
-                <li>1-800-CONNECTED</li>
-                <li>123 Tech Street, SF, CA</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>© 2024 ConnectED. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

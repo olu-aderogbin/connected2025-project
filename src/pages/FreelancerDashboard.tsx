@@ -22,11 +22,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Footer } from "@/components/layout/Footer";
 
 const FreelancerDashboard = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
+    <div className="min-h-screen bg-white flex flex-col">
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-8">
@@ -47,266 +47,194 @@ const FreelancerDashboard = () => {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Welcome back, Sarah!</h1>
-          <p className="text-gray-600">Here's an overview of your freelancing activity</p>
-        </div>
+      <div className="flex-grow">
+        <main className="container mx-auto px-4 py-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900">Welcome back, Sarah!</h1>
+            <p className="text-gray-600">Here's an overview of your freelancing activity</p>
+          </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Active Gigs</CardTitle>
-              <Briefcase className="h-4 w-4 text-primary" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">4</div>
-              <p className="text-xs text-gray-600">2 deliverables due this week</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Monthly Earnings</CardTitle>
-              <DollarSign className="h-4 w-4 text-primary" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">$3,450</div>
-              <p className="text-xs text-green-600">+24% from last month</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Client Rating</CardTitle>
-              <Star className="h-4 w-4 text-primary" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">4.9/5</div>
-              <p className="text-xs text-gray-600">Based on 28 reviews</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Completion Rate</CardTitle>
-              <Award className="h-4 w-4 text-primary" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">98%</div>
-              <p className="text-xs text-gray-600">Top rated freelancer</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Active Gigs */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">Active Gigs</CardTitle>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-gray-500">Active Gigs</CardTitle>
+                <Briefcase className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Project</TableHead>
-                      <TableHead>Client</TableHead>
-                      <TableHead>Deadline</TableHead>
-                      <TableHead>Status</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
+                <div className="text-2xl font-bold">4</div>
+                <p className="text-xs text-gray-600">2 deliverables due this week</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-gray-500">Monthly Earnings</CardTitle>
+                <DollarSign className="h-4 w-4 text-primary" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">$3,450</div>
+                <p className="text-xs text-green-600">+24% from last month</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-gray-500">Client Rating</CardTitle>
+                <Star className="h-4 w-4 text-primary" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">4.9/5</div>
+                <p className="text-xs text-gray-600">Based on 28 reviews</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-sm font-medium text-gray-500">Completion Rate</CardTitle>
+                <Award className="h-4 w-4 text-primary" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">98%</div>
+                <p className="text-xs text-gray-600">Top rated freelancer</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Active Gigs</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Project</TableHead>
+                        <TableHead>Client</TableHead>
+                        <TableHead>Deadline</TableHead>
+                        <TableHead>Status</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {[
+                        {
+                          project: "E-commerce Website Development",
+                          client: "TechStore Inc.",
+                          deadline: "Mar 15",
+                          status: "In Progress",
+                        },
+                        {
+                          project: "Mobile App UI Design",
+                          client: "StartUp Labs",
+                          deadline: "Mar 20",
+                          status: "Review",
+                        },
+                      ].map((gig) => (
+                        <TableRow key={gig.project}>
+                          <TableCell className="font-medium">{gig.project}</TableCell>
+                          <TableCell>{gig.client}</TableCell>
+                          <TableCell>{gig.deadline}</TableCell>
+                          <TableCell>
+                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                              {gig.status}
+                            </span>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Recent Payments</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
                     {[
                       {
-                        project: "E-commerce Website Development",
-                        client: "TechStore Inc.",
-                        deadline: "Mar 15",
-                        status: "In Progress",
+                        project: "Website Redesign",
+                        amount: "$1,200",
+                        date: "Mar 10, 2024",
+                        status: "Completed",
                       },
                       {
-                        project: "Mobile App UI Design",
-                        client: "StartUp Labs",
-                        deadline: "Mar 20",
-                        status: "Review",
+                        project: "Logo Design Package",
+                        amount: "$450",
+                        date: "Mar 5, 2024",
+                        status: "Completed",
                       },
-                    ].map((gig) => (
-                      <TableRow key={gig.project}>
-                        <TableCell className="font-medium">{gig.project}</TableCell>
-                        <TableCell>{gig.client}</TableCell>
-                        <TableCell>{gig.deadline}</TableCell>
-                        <TableCell>
-                          <span className="px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                            {gig.status}
-                          </span>
-                        </TableCell>
-                      </TableRow>
+                    ].map((payment) => (
+                      <div key={payment.project} className="flex items-center justify-between p-4 border rounded-lg">
+                        <div>
+                          <h3 className="font-medium">{payment.project}</h3>
+                          <p className="text-sm text-gray-600">{payment.date}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-green-600">{payment.amount}</p>
+                          <p className="text-sm text-gray-600">{payment.status}</p>
+                        </div>
+                      </div>
                     ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-
-            {/* Recent Payments */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">Recent Payments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {[
-                    {
-                      project: "Website Redesign",
-                      amount: "$1,200",
-                      date: "Mar 10, 2024",
-                      status: "Completed",
-                    },
-                    {
-                      project: "Logo Design Package",
-                      amount: "$450",
-                      date: "Mar 5, 2024",
-                      status: "Completed",
-                    },
-                  ].map((payment) => (
-                    <div key={payment.project} className="flex items-center justify-between p-4 border rounded-lg">
-                      <div>
-                        <h3 className="font-medium">{payment.project}</h3>
-                        <p className="text-sm text-gray-600">{payment.date}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-bold text-green-600">{payment.amount}</p>
-                        <p className="text-sm text-gray-600">{payment.status}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-8">
-            {/* Quick Actions */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <Button className="w-full justify-between" variant="outline">
-                  Submit Deliverable
-                  <FileText className="h-4 w-4" />
-                </Button>
-                <Button className="w-full justify-between" variant="outline">
-                  Message Clients
-                  <MessageSquare className="h-4 w-4" />
-                </Button>
-                <Button className="w-full justify-between" variant="outline">
-                  View Proposals
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Upcoming Deadlines */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">Upcoming Deadlines</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {[
-                    {
-                      title: "UI Design Review",
-                      date: "Tomorrow, 3:00 PM",
-                      priority: "high",
-                    },
-                    {
-                      title: "Client Meeting",
-                      date: "Mar 15, 10:00 AM",
-                      priority: "medium",
-                    },
-                  ].map((deadline) => (
-                    <div key={deadline.title} className="flex items-center space-x-4">
-                      <Clock className="h-4 w-4 text-primary" />
-                      <div>
-                        <p className="font-medium">{deadline.title}</p>
-                        <p className="text-sm text-gray-600">{deadline.date}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Community Updates */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">Community Updates</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-medium">Freelancer Meetup</h3>
-                    <p className="text-sm text-gray-600 mt-1">Virtual networking event this Friday</p>
-                    <Button variant="link" className="mt-2 p-0">
-                      Join Event
-                    </Button>
                   </div>
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-medium">New Skills Workshop</h3>
-                    <p className="text-sm text-gray-600 mt-1">Learn React Native Development</p>
-                    <Button variant="link" className="mt-2 p-0">
-                      Register Now
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </main>
+                </CardContent>
+              </Card>
+            </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white mt-16">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">ConnectED</h3>
-              <p className="text-gray-400 text-sm">
-                Empowering freelancers to succeed.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to="/gigs">Find Gigs</Link></li>
-                <li><Link to="/portfolio">Portfolio</Link></li>
-                <li><Link to="/community">Community</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to="/help">Help Center</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/careers">Careers</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>support@connected.com</li>
-                <li>1-800-CONNECTED</li>
-                <li>123 Tech Street, SF, CA</li>
-              </ul>
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Quick Actions</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <Button className="w-full justify-between" variant="outline">
+                    Submit Deliverable
+                    <FileText className="h-4 w-4" />
+                  </Button>
+                  <Button className="w-full justify-between" variant="outline">
+                    Message Clients
+                    <MessageSquare className="h-4 w-4" />
+                  </Button>
+                  <Button className="w-full justify-between" variant="outline">
+                    View Proposals
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Upcoming Deadlines</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        title: "UI Design Review",
+                        date: "Tomorrow, 3:00 PM",
+                        priority: "high",
+                      },
+                      {
+                        title: "Client Meeting",
+                        date: "Mar 15, 10:00 AM",
+                        priority: "medium",
+                      },
+                    ].map((deadline) => (
+                      <div key={deadline.title} className="flex items-center space-x-4">
+                        <Clock className="h-4 w-4 text-primary" />
+                        <div>
+                          <p className="font-medium">{deadline.title}</p>
+                          <p className="text-sm text-gray-600">{deadline.date}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>© 2024 ConnectED. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+        </main>
+      </div>
+      <Footer />
     </div>
   );
 };
