@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+import { Globe, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -9,8 +9,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const Header = () => {
+  const isLoggedIn = false; // This should be replaced with actual auth state
+
   return (
     <header className="bg-white border-b sticky top-0 z-50">
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
@@ -81,6 +84,9 @@ export const Header = () => {
                       <Link to="/faq" className="block text-sm hover:text-primary">
                         FAQ
                       </Link>
+                      <Link to="/help" className="block text-sm hover:text-primary">
+                        Help Center
+                      </Link>
                       <Link to="/#pricing" className="block text-sm hover:text-primary">
                         Pricing
                       </Link>
@@ -116,13 +122,30 @@ export const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="space-x-4">
-          <Link to="/signup">
-            <Button variant="outline">Sign Up</Button>
+        <div className="flex items-center space-x-4">
+          <Link to="/help">
+            <Button variant="ghost" size="icon">
+              <HelpCircle className="h-5 w-5" />
+            </Button>
           </Link>
-          <Link to="/">
-            <Button>Login</Button>
-          </Link>
+          
+          {isLoggedIn ? (
+            <Link to="/profile">
+              <Avatar className="cursor-pointer">
+                <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+            </Link>
+          ) : (
+            <>
+              <Link to="/signup">
+                <Button variant="outline">Sign Up</Button>
+              </Link>
+              <Link to="/">
+                <Button>Login</Button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

@@ -15,6 +15,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
+import HelpCenter from "./pages/HelpCenter";
+import UserProfile from "./pages/UserProfile";
+import ProfileEdit from "./pages/ProfileEdit";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +40,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/profile/edit" element={<ProfileEdit />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
