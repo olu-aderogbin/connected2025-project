@@ -1,6 +1,6 @@
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
-import { Path, Target, BookOpen } from "lucide-react";
+import { GitBranch, Target, BookOpen } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -39,7 +39,7 @@ const CareerPathPlanning = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-3xl font-bold flex items-center gap-2">
-            <Path className="h-8 w-8 text-primary" />
+            <GitBranch className="h-8 w-8 text-primary" />
             Career Path Planning
           </h1>
           <Button className="flex items-center gap-2">
