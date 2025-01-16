@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Users, MapPin, Mail, Phone, Globe } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Building2, Users, MapPin, Phone, Mail, Globe } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const InstitutionProfile = () => {
   const { toast } = useToast();
@@ -21,15 +21,11 @@ const InstitutionProfile = () => {
   return (
     <DashboardLayout>
       <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold">Institution Profile</h1>
-            <p className="text-gray-600">Manage your institution's information and settings</p>
+            <p className="text-gray-600 mt-2">Manage your institution's information and settings</p>
           </div>
-          <Button onClick={() => window.location.href = "/career-officer/students"}>
-            <Users className="mr-2 h-4 w-4" />
-            View Students
-          </Button>
         </div>
 
         <Tabs defaultValue="profile" className="space-y-6">
@@ -48,32 +44,31 @@ const InstitutionProfile = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name">Institution Name</label>
-                      <Input id="name" placeholder="Enter institution name" />
+                      <label className="text-sm font-medium">Institution Name</label>
+                      <Input placeholder="Enter institution name" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="website">Website</label>
-                      <Input id="website" type="url" placeholder="https://" />
+                      <label className="text-sm font-medium">Website</label>
+                      <Input placeholder="www.institution.edu" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email">Email</label>
-                      <Input id="email" type="email" placeholder="contact@institution.edu" />
+                      <label className="text-sm font-medium">Phone</label>
+                      <Input placeholder="Enter phone number" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="phone">Phone</label>
-                      <Input id="phone" type="tel" placeholder="Phone number" />
+                      <label className="text-sm font-medium">Email</label>
+                      <Input type="email" placeholder="contact@institution.edu" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="address">Address</label>
-                    <Input id="address" placeholder="Institution address" />
+                    <label className="text-sm font-medium">Address</label>
+                    <Input placeholder="Enter institution address" />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="description">About Institution</label>
-                    <Textarea
-                      id="description"
+                    <label className="text-sm font-medium">Description</label>
+                    <Textarea 
                       placeholder="Tell us about your institution"
                       className="h-32"
                     />
@@ -81,6 +76,30 @@ const InstitutionProfile = () => {
 
                   <Button type="submit">Save Changes</Button>
                 </form>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="students">
+            <Card>
+              <CardHeader>
+                <CardTitle>Enrolled Students</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {/* Student listing component will go here */}
+                <p>Student management interface will be implemented here</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="settings">
+            <Card>
+              <CardHeader>
+                <CardTitle>Institution Settings</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {/* Settings interface will go here */}
+                <p>Institution settings interface will be implemented here</p>
               </CardContent>
             </Card>
           </TabsContent>
