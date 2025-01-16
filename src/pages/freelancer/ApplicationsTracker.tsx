@@ -37,7 +37,7 @@ const ApplicationsTracker = () => {
       case "Under Review":
         return <Badge variant="secondary">{status}</Badge>;
       case "Interview Scheduled":
-        return <Badge variant="primary">{status}</Badge>;
+        return <Badge variant="secondary">{status}</Badge>;
       case "Rejected":
         return <Badge variant="destructive">{status}</Badge>;
       default:
