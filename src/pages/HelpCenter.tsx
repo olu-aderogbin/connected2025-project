@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
 import {
   Accordion,
@@ -13,7 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle, Search, MessageCircle, Book, FileText, LifeBuoy } from "lucide-react";
+import { Search, MessageCircle, Book, FileText, LifeBuoy, AlertCircle } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -53,11 +53,11 @@ const HelpCenter = () => {
               </CardHeader>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/report-complaint'}>
               <CardHeader>
-                <FileText className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Documentation</CardTitle>
-                <CardDescription>Detailed platform guides</CardDescription>
+                <AlertCircle className="h-8 w-8 text-primary mb-2" />
+                <CardTitle>Report a Complaint</CardTitle>
+                <CardDescription>Submit and track your complaints</CardDescription>
               </CardHeader>
             </Card>
           </div>

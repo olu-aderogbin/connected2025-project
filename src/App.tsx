@@ -57,6 +57,8 @@ import ForumTopicDetail from "./pages/ForumTopicDetail";
 import NewForumTopic from "./pages/NewForumTopic";
 import GroupDetail from "./pages/GroupDetail";
 import CreateGroup from "./pages/CreateGroup";
+import ReportComplaint from "./pages/ReportComplaint";
+import ComplaintStatus from "./pages/ComplaintStatus";
 
 const queryClient = new QueryClient();
 
@@ -126,6 +128,10 @@ const App = () => (
           
           {/* Search routes */}
           <Route path="/search" element={<SearchResults />} />
+
+          {/* Complaint System Routes */}
+          <Route path="/report-complaint" element={<ReportComplaint />} />
+          <Route path="/complaint-status" element={<ComplaintStatus />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
