@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { ProgressSpinner } from "@/components/ui/progress-spinner";
+import { cn } from "@/lib/utils";
 
 export const LoginSection = () => {
   const [email, setEmail] = useState("");
