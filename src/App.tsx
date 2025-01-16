@@ -21,6 +21,11 @@ import ProfileEdit from "./pages/ProfileEdit";
 import Notifications from "./pages/Notifications";
 import MessagingInbox from "./pages/MessagingInbox";
 
+// New student pages
+import ProfileSetup from "./pages/student/ProfileSetup";
+import InternshipListings from "./pages/student/InternshipListings";
+import FindMentor from "./pages/student/FindMentor";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -47,6 +52,11 @@ const App = () => (
           <Route path="/profile/edit" element={<ProfileEdit />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/messages" element={<MessagingInbox />} />
+          
+          {/* New student routes */}
+          <Route path="/student/profile-setup" element={<ProfileSetup />} />
+          <Route path="/student/internships" element={<InternshipListings />} />
+          <Route path="/student/find-mentor" element={<FindMentor />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
