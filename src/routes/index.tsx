@@ -50,6 +50,14 @@ import CompanyProfileSetup from "@/pages/employer/CompanyProfileSetup";
 import PostOpportunity from "@/pages/employer/PostOpportunity";
 import ManageApplications from "@/pages/employer/ManageApplications";
 import CandidateSearch from "@/pages/employer/CandidateSearch";
+import AnalyticsDashboard from "@/pages/employer/AnalyticsDashboard";
+import InterviewSchedule from "@/pages/employer/InterviewSchedule";
+import TeamManagement from "@/pages/employer/TeamManagement";
+import CandidatePools from "@/pages/employer/CandidatePools";
+import MessageCenter from "@/pages/employer/MessageCenter";
+import CompanyReviews from "@/pages/employer/CompanyReviews";
+import JobTemplates from "@/pages/employer/JobTemplates";
+import BillingHistory from "@/pages/employer/BillingHistory";
 
 // Community pages
 import Forums from "@/pages/Forums";
@@ -121,6 +129,11 @@ export const freelancerRoutes: RouteObject[] = [
   { path: "/freelancer/earnings", element: <EarningHistory /> },
 ];
 
+// Payment routes
+export const paymentRoutes: RouteObject[] = [
+  { path: "/payments/employer", element: <EmployerPayment /> },
+];
+
 // Employer routes
 export const employerRoutes: RouteObject[] = [
   { path: "/employer/profile-setup", element: <CompanyProfileSetup /> },
@@ -128,11 +141,14 @@ export const employerRoutes: RouteObject[] = [
   { path: "/employer/applications", element: <ManageApplications /> },
   { path: "/employer/candidates", element: <CandidateSearch /> },
   { path: "/employer/payments", element: <EmployerPayment /> },
-];
-
-// Payment routes
-export const paymentRoutes: RouteObject[] = [
-  { path: "/payments/employer", element: <EmployerPayment /> },
+  { path: "/employer/analytics", element: <AnalyticsDashboard /> },
+  { path: "/employer/interviews", element: <InterviewSchedule /> },
+  { path: "/employer/team", element: <TeamManagement /> },
+  { path: "/employer/candidate-pools", element: <CandidatePools /> },
+  { path: "/employer/messages", element: <MessageCenter /> },
+  { path: "/employer/reviews", element: <CompanyReviews /> },
+  { path: "/employer/job-templates", element: <JobTemplates /> },
+  { path: "/employer/billing-history", element: <BillingHistory /> },
 ];
 
 // Community routes
