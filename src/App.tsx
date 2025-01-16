@@ -30,6 +30,11 @@ import SkillsAssessment from "./pages/student/SkillsAssessment";
 import CareerPathPlanning from "./pages/student/CareerPathPlanning";
 import PeerNetwork from "./pages/student/PeerNetwork";
 import Reviews from "./pages/student/Reviews";
+import InternshipStatus from "./pages/student/InternshipStatus";
+import ScholarshipStatus from "./pages/student/ScholarshipStatus";
+import MentorStatus from "./pages/student/MentorStatus";
+import LearningResources from "./pages/student/LearningResources";
+import Settings from "./pages/student/Settings";
 
 const queryClient = new QueryClient();
 
