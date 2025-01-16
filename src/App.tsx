@@ -41,6 +41,12 @@ import Settings from "./pages/student/Settings";
 import FreelancerProfileSetup from "./pages/freelancer/ProfileSetup";
 import GigListings from "./pages/freelancer/GigListings";
 import ApplyGig from "./pages/freelancer/ApplyGig";
+import ApplicationsTracker from "./pages/freelancer/ApplicationsTracker";
+import ReviewsRatings from "./pages/freelancer/ReviewsRatings";
+import EarningHistory from "./pages/freelancer/EarningHistory";
+
+// Payment pages
+import EmployerPayment from "./pages/payments/EmployerPayment";
 
 const queryClient = new QueryClient();
 
@@ -90,7 +96,12 @@ const App = () => (
           <Route path="/freelancer/profile-setup" element={<FreelancerProfileSetup />} />
           <Route path="/freelancer/gigs" element={<GigListings />} />
           <Route path="/freelancer/gigs/:id/apply" element={<ApplyGig />} />
-          <Route path="/freelancer/skills-assessment" element={<SkillsAssessment />} />
+          <Route path="/freelancer/applications" element={<ApplicationsTracker />} />
+          <Route path="/freelancer/reviews" element={<ReviewsRatings />} />
+          <Route path="/freelancer/earnings" element={<EarningHistory />} />
+          
+          {/* Payment routes */}
+          <Route path="/payments/employer" element={<EmployerPayment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

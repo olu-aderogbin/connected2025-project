@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Globe, HelpCircle, Bell, MessageSquare } from "lucide-react";
+import { Globe, HelpCircle, Bell, MessageSquare, DollarSign, Star, ClipboardList } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -8,6 +8,7 @@ type UserRole = "student" | "employer" | "mentor" | "career-officer" | "freelanc
 interface NavItem {
   label: string;
   href: string;
+  icon?: React.ReactNode;
 }
 
 const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
@@ -41,12 +42,12 @@ const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
     { label: "Analytics", href: "/analytics" },
   ],
   freelancer: [
-    { label: "Dashboard", href: "/freelancer-dashboard" },
-    { label: "Find Gigs", href: "/freelancer/gigs" },
-    { label: "Profile", href: "/freelancer/profile-setup" },
-    { label: "Skills", href: "/freelancer/skills-assessment" },
-    { label: "Messages", href: "/messages" },
-    { label: "Settings", href: "/settings" },
+    { label: "Dashboard", href: "/freelancer-dashboard", icon: <Globe className="h-4 w-4" /> },
+    { label: "Find Gigs", href: "/freelancer/gigs", icon: <ClipboardList className="h-4 w-4" /> },
+    { label: "Applications", href: "/freelancer/applications", icon: <ClipboardList className="h-4 w-4" /> },
+    { label: "Reviews", href: "/freelancer/reviews", icon: <Star className="h-4 w-4" /> },
+    { label: "Earnings", href: "/freelancer/earnings", icon: <DollarSign className="h-4 w-4" /> },
+    { label: "Profile", href: "/freelancer/profile-setup", icon: <Avatar className="h-4 w-4" /> },
   ],
 };
 
@@ -75,6 +76,7 @@ export const RoleBasedHeader = ({ userRole, userName, userAvatar }: RoleBasedHea
                   to={item.href}
                   className="text-gray-600 hover:text-primary transition-colors"
                 >
+                  {item.icon}
                   {item.label}
                 </Link>
               ))}
