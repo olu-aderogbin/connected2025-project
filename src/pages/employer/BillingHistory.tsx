@@ -101,7 +101,7 @@ const BillingHistory = () => {
                       <p className="text-sm text-gray-500">{transaction.invoice}</p>
                     </div>
                     <Badge
-                      variant={transaction.status === "paid" ? "success" : "destructive"}
+                      variant={transaction.status === "paid" ? "secondary" : "destructive"}
                     >
                       {transaction.status}
                     </Badge>
