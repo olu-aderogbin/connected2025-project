@@ -58,6 +58,13 @@ const App = () => (
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/messages" element={<MessagingInbox />} />
           
+          {/* New student routes */}
+          <Route path="/student/internship-status" element={<InternshipStatus />} />
+          <Route path="/student/scholarship-status" element={<ScholarshipStatus />} />
+          <Route path="/student/mentor-status" element={<MentorStatus />} />
+          <Route path="/student/learning-resources" element={<LearningResources />} />
+          <Route path="/student/settings" element={<Settings />} />
+          
           {/* Student routes */}
           <Route path="/student/profile-setup" element={<ProfileSetup />} />
           <Route path="/student/internships" element={<InternshipListings />} />
