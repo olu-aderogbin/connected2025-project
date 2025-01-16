@@ -1,18 +1,16 @@
 import { RouteObject } from "react-router-dom";
-import {
-  AnalyticsDashboard,
-  BillingHistory,
-  CandidatePools,
-  CandidateSearch,
-  CompanyProfileSetup,
-  CompanyReviews,
-  InterviewSchedule,
-  JobTemplates,
-  ManageApplications,
-  MessageCenter,
-  PostOpportunity,
-  TeamManagement
-} from "@/pages/employer";
+import AnalyticsDashboard from "@/pages/employer/AnalyticsDashboard";
+import BillingHistory from "@/pages/employer/BillingHistory";
+import CandidatePools from "@/pages/employer/CandidatePools";
+import CandidateSearch from "@/pages/employer/CandidateSearch";
+import CompanyProfileSetup from "@/pages/employer/CompanyProfileSetup";
+import CompanyReviews from "@/pages/employer/CompanyReviews";
+import InterviewSchedule from "@/pages/employer/InterviewSchedule";
+import JobTemplates from "@/pages/employer/JobTemplates";
+import ManageApplications from "@/pages/employer/ManageApplications";
+import MessageCenter from "@/pages/employer/MessageCenter";
+import PostOpportunity from "@/pages/employer/PostOpportunity";
+import TeamManagement from "@/pages/employer/TeamManagement";
 
 export const employerRoutes: RouteObject[] = [
   { path: "/employer/analytics", element: <AnalyticsDashboard /> },

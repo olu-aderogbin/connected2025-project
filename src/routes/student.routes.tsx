@@ -1,19 +1,17 @@
 import { RouteObject } from "react-router-dom";
-import { 
-  CareerPathPlanning,
-  FindMentor,
-  InternshipListings,
-  InternshipStatus,
-  LearningResources,
-  MentorStatus,
-  PeerNetwork,
-  ProfileSetup,
-  Reviews,
-  ScholarshipSearch,
-  ScholarshipStatus,
-  Settings,
-  SkillsAssessment
-} from "@/pages/student";
+import CareerPathPlanning from "@/pages/student/CareerPathPlanning";
+import FindMentor from "@/pages/student/FindMentor";
+import InternshipListings from "@/pages/student/InternshipListings";
+import InternshipStatus from "@/pages/student/InternshipStatus";
+import LearningResources from "@/pages/student/LearningResources";
+import MentorStatus from "@/pages/student/MentorStatus";
+import PeerNetwork from "@/pages/student/PeerNetwork";
+import ProfileSetup from "@/pages/student/ProfileSetup";
+import Reviews from "@/pages/student/Reviews";
+import ScholarshipSearch from "@/pages/student/ScholarshipSearch";
+import ScholarshipStatus from "@/pages/student/ScholarshipStatus";
+import Settings from "@/pages/student/Settings";
+import SkillsAssessment from "@/pages/student/SkillsAssessment";
 
 export const studentRoutes: RouteObject[] = [
   { path: "/student/career-planning", element: <CareerPathPlanning /> },
