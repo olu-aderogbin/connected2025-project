@@ -28,3 +28,9 @@ dist-ssr
 .lovable-history/
 lovable-chat-history.json
 lovable-settings.json
+
+git rm -r --cached .
+git add .
+git commit -m "Remove previously tracked ignored files"
+git push
+
