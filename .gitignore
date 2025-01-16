@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Custom ignores for sensitive data
+.lovable/
+.lovable-history/
+lovable-chat-history.json
+lovable-settings.json
