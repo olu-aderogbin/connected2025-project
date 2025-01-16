@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img src="/logo-orange.png" alt="ConnectED" className="h-8" />
+              <img src="/lovable-uploads/64478705-c0d0-463e-a63c-f1c137059fef.png" alt="ConnectED" className="h-8" />
             </Link>
             <p className="text-accent-foreground/80">
               Empowering students to build successful careers through meaningful connections and opportunities.

@@ -24,7 +24,7 @@ export const LoginSection = () => {
       <div className="container mx-auto px-4 max-w-md">
         <div className="bg-white rounded-xl shadow-2xl p-8">
           <div className="text-center space-y-6 mb-8">
-            <img src="/logo-blue.png" alt="ConnectED" className="h-12 mx-auto" />
+            <img src="/lovable-uploads/169239cd-8450-4a5f-bf87-60dd7d94a399.png" alt="ConnectED" className="h-12 mx-auto" />
             <div>
               <h2 className="text-3xl font-bold text-accent">Welcome Back!</h2>
               <p className="text-gray-600">Login to access your opportunities</p>
