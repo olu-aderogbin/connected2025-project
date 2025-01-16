@@ -15,6 +15,9 @@ const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
     { label: "Dashboard", href: "/dashboard" },
     { label: "Internships", href: "/student/internships" },
     { label: "Find Mentor", href: "/student/find-mentor" },
+    { label: "Career Planning", href: "/student/career-planning" },
+    { label: "Community", href: "/student/peer-network" },
+    { label: "Reviews", href: "/student/reviews" },
     { label: "Profile", href: "/student/profile-setup" },
   ],
   employer: [

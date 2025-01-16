@@ -28,6 +28,8 @@ import FindMentor from "./pages/student/FindMentor";
 import ScholarshipSearch from "./pages/student/ScholarshipSearch";
 import SkillsAssessment from "./pages/student/SkillsAssessment";
 import CareerPathPlanning from "./pages/student/CareerPathPlanning";
+import PeerNetwork from "./pages/student/PeerNetwork";
+import Reviews from "./pages/student/Reviews";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +65,8 @@ const App = () => (
           <Route path="/student/scholarships" element={<ScholarshipSearch />} />
           <Route path="/student/skills-assessment" element={<SkillsAssessment />} />
           <Route path="/student/career-planning" element={<CareerPathPlanning />} />
+          <Route path="/student/peer-network" element={<PeerNetwork />} />
+          <Route path="/student/reviews" element={<Reviews />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
