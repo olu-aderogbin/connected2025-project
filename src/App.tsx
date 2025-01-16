@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Index from "./pages/Index";
 import Signup from "./pages/Signup";
 import PasswordRecovery from "./pages/PasswordRecovery";
@@ -79,6 +80,12 @@ const App = () => (
           <Route path="/student/career-planning" element={<CareerPathPlanning />} />
           <Route path="/student/peer-network" element={<PeerNetwork />} />
           <Route path="/student/reviews" element={<Reviews />} />
+          
+          {/* New freelancer routes */}
+          <Route path="/freelancer/profile-setup" element={<FreelancerProfileSetup />} />
+          <Route path="/freelancer/gigs" element={<GigListings />} />
+          <Route path="/freelancer/gigs/:id/apply" element={<ApplyGig />} />
+          <Route path="/freelancer/skills-assessment" element={<SkillsAssessment />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

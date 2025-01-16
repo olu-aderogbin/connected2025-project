@@ -42,9 +42,11 @@ const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
   ],
   freelancer: [
     { label: "Dashboard", href: "/freelancer-dashboard" },
-    { label: "Find Work", href: "/find-work" },
-    { label: "My Projects", href: "/projects" },
-    { label: "Earnings", href: "/earnings" },
+    { label: "Find Gigs", href: "/freelancer/gigs" },
+    { label: "Profile", href: "/freelancer/profile-setup" },
+    { label: "Skills", href: "/freelancer/skills-assessment" },
+    { label: "Messages", href: "/messages" },
+    { label: "Settings", href: "/settings" },
   ],
 };
 
