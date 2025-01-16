@@ -37,6 +37,11 @@ import MentorStatus from "./pages/student/MentorStatus";
 import LearningResources from "./pages/student/LearningResources";
 import Settings from "./pages/student/Settings";
 
+// Freelancer pages
+import FreelancerProfileSetup from "./pages/freelancer/ProfileSetup";
+import GigListings from "./pages/freelancer/GigListings";
+import ApplyGig from "./pages/freelancer/ApplyGig";
+
 const queryClient = new QueryClient();
 
 const App = () => (
