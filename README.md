@@ -1,8 +1,19 @@
-# Welcome to your Lovable project
+# Welcome to your lov001 project
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/c62ae017-43db-40b8-aa93-59e3d84b6a14
+
+## Important: Protecting Sensitive Data
+
+Before pushing to GitHub, please add these entries to your `.gitignore`:
+```
+# Custom ignores for sensitive data
+.lovable/
+.lovable-history/
+lovable-chat-history.json
+lovable-settings.json
+```
 
 ## How can I edit this code?
 
