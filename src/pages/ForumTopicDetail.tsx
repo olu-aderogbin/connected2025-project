@@ -1,7 +1,7 @@
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { MessageCircle, ThumbsUp, Reply, Flag } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -51,7 +51,10 @@ const ForumTopicDetail = () => {
         <Card className="mb-8">
           <CardHeader>
             <div className="flex items-center gap-4 mb-4">
-              <Avatar src={mockTopic.author.avatar} alt={mockTopic.author.name} />
+              <Avatar>
+                <AvatarImage src={mockTopic.author.avatar} alt={mockTopic.author.name} />
+                <AvatarFallback>{mockTopic.author.name.charAt(0)}</AvatarFallback>
+              </Avatar>
               <div>
                 <CardTitle>{mockTopic.title}</CardTitle>
                 <p className="text-sm text-gray-500">
@@ -84,7 +87,10 @@ const ForumTopicDetail = () => {
             <Card key={reply.id}>
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <Avatar src={reply.author.avatar} alt={reply.author.name} />
+                  <Avatar>
+                    <AvatarImage src={reply.author.avatar} alt={reply.author.name} />
+                    <AvatarFallback>{reply.author.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-semibold">{reply.author.name}</h4>

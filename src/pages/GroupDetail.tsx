@@ -1,10 +1,10 @@
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar } from "@/components/ui/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Users, MessageSquare, Calendar, Settings } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const GroupDetail = () => {
   const { toast } = useToast();
@@ -81,9 +81,11 @@ const GroupDetail = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="space-y-4">
-                  {/* Mock discussions */}
                   <div className="flex items-start gap-4">
-                    <Avatar src="/placeholder.svg" alt="User" />
+                    <Avatar>
+                      <AvatarImage src="/placeholder.svg" alt="User" />
+                      <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
                     <div>
                       <h4 className="font-semibold">Latest Tech Trends 2024</h4>
                       <p className="text-sm text-gray-500">Started by John Doe • 2 days ago</p>
@@ -98,9 +100,11 @@ const GroupDetail = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Mock members */}
                   <div className="flex items-center gap-4">
-                    <Avatar src="/placeholder.svg" alt="Member" />
+                    <Avatar>
+                      <AvatarImage src="/placeholder.svg" alt="Member" />
+                      <AvatarFallback>M</AvatarFallback>
+                    </Avatar>
                     <div>
                       <h4 className="font-semibold">Jane Smith</h4>
                       <p className="text-sm text-gray-500">Admin</p>
