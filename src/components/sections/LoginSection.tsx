@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
+import { useNotification } from "@/hooks/use-notification";
 import { ArrowRight, Lock, Mail, Loader2, Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ProgressSpinner } from "@/components/ui/progress-spinner";
 
 export const LoginSection = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
-  const { toast } = useToast();
+  const notification = useNotification();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,16 +22,9 @@ export const LoginSection = () => {
     try {
       // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      toast({
-        title: "Login Attempted",
-        description: "This is a demo login page. Backend integration pending.",
-      });
+      notification.success("Login Successful", "Welcome back!");
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to login. Please try again.",
-        variant: "destructive",
-      });
+      notification.error("Login Failed", "Please check your credentials and try again.");
     } finally {
       setIsLoading(false);
     }
@@ -38,16 +32,9 @@ export const LoginSection = () => {
 
   const handleOAuthLogin = async (provider: string) => {
     try {
-      toast({
-        title: "OAuth Login",
-        description: `${provider} integration pending.`,
-      });
+      notification.info("OAuth Login", `${provider} integration pending.`);
     } catch (error) {
-      toast({
-        title: "Error",
-        description: `Failed to login with ${provider}`,
-        variant: "destructive",
-      });
+      notification.error("Error", `Failed to login with ${provider}`);
     }
   };
 
@@ -71,7 +58,8 @@ export const LoginSection = () => {
               <img 
                 src="/lovable-uploads/2ccd115a-eb6a-4fc9-9b52-9f15248b47f3.png" 
                 alt="ConnectED" 
-                className="h-12 mx-auto" 
+                className="h-12 mx-auto"
+                loading="lazy"
               />
               <div>
                 <h2 className="text-3xl font-bold text-accent">Welcome Back!</h2>
@@ -79,7 +67,7 @@ export const LoginSection = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
@@ -88,12 +76,19 @@ export const LoginSection = () => {
                     id="email"
                     type="email"
                     placeholder="Enter your email"
-                    className="pl-10"
+                    className={cn(
+                      "pl-10",
+                      email && !email.includes("@") && "border-red-500 focus-visible:ring-red-500"
+                    )}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     disabled={isLoading}
+                    aria-label="Email address"
                   />
+                  {email && !email.includes("@") && (
+                    <p className="mt-1 text-sm text-red-500">Please enter a valid email address</p>
+                  )}
                 </div>
               </div>
 
@@ -110,13 +105,18 @@ export const LoginSection = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     disabled={isLoading}
+                    aria-label="Password"
                   />
                 </div>
               </div>
 
               <div className="flex items-center justify-between">
                 <label className="flex items-center space-x-2 text-sm">
-                  <input type="checkbox" className="rounded border-gray-300" />
+                  <input 
+                    type="checkbox" 
+                    className="rounded border-gray-300"
+                    aria-label="Remember me"
+                  />
                   <span>Remember me</span>
                 </label>
                 <Link
@@ -127,9 +127,13 @@ export const LoginSection = () => {
                 </Link>
               </div>
 
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button 
+                type="submit" 
+                className="w-full touch-manipulation"
+                disabled={isLoading}
+              >
                 {isLoading ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <ProgressSpinner size="sm" className="mr-2" />
                 ) : (
                   <ArrowRight className="ml-2 h-4 w-4" />
                 )}
@@ -152,6 +156,7 @@ export const LoginSection = () => {
                   variant="outline"
                   onClick={() => handleOAuthLogin("GitHub")}
                   type="button"
+                  className="touch-manipulation"
                 >
                   <Github className="mr-2 h-4 w-4" />
                   GitHub
@@ -160,6 +165,7 @@ export const LoginSection = () => {
                   variant="outline"
                   onClick={() => handleOAuthLogin("LinkedIn")}
                   type="button"
+                  className="touch-manipulation"
                 >
                   <Linkedin className="mr-2 h-4 w-4" />
                   LinkedIn
