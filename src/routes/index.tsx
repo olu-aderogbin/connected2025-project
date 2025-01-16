@@ -45,6 +45,12 @@ import EarningHistory from "@/pages/freelancer/EarningHistory";
 // Payment pages
 import EmployerPayment from "@/pages/payments/EmployerPayment";
 
+// Employer pages
+import CompanyProfileSetup from "@/pages/employer/CompanyProfileSetup";
+import PostOpportunity from "@/pages/employer/PostOpportunity";
+import ManageApplications from "@/pages/employer/ManageApplications";
+import CandidateSearch from "@/pages/employer/CandidateSearch";
+
 // Community pages
 import Forums from "@/pages/Forums";
 import ForumCategory from "@/pages/ForumCategory";
@@ -115,6 +121,15 @@ export const freelancerRoutes: RouteObject[] = [
   { path: "/freelancer/earnings", element: <EarningHistory /> },
 ];
 
+// Employer routes
+export const employerRoutes: RouteObject[] = [
+  { path: "/employer/profile-setup", element: <CompanyProfileSetup /> },
+  { path: "/employer/post-opportunity", element: <PostOpportunity /> },
+  { path: "/employer/applications", element: <ManageApplications /> },
+  { path: "/employer/candidates", element: <CandidateSearch /> },
+  { path: "/employer/payments", element: <EmployerPayment /> },
+];
+
 // Payment routes
 export const paymentRoutes: RouteObject[] = [
   { path: "/payments/employer", element: <EmployerPayment /> },
@@ -145,6 +160,7 @@ export const routes: RouteObject[] = [
   ...userRoutes,
   ...studentRoutes,
   ...freelancerRoutes,
+  ...employerRoutes,
   ...paymentRoutes,
   ...communityRoutes,
   ...supportRoutes,
