@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Globe, HelpCircle, Bell, MessageSquare, DollarSign, Star, ClipboardList } from "lucide-react";
+import { Globe, HelpCircle, Bell, MessageSquare, DollarSign, Star, ClipboardList, Users, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -12,6 +12,12 @@ interface NavItem {
 }
 
 const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
+  mentor: [
+    { label: "Dashboard", href: "/mentor-dashboard", icon: <Globe className="h-4 w-4" /> },
+    { label: "Profile", href: "/mentor/profile-setup", icon: <Avatar className="h-4 w-4" /> },
+    { label: "Mentees", href: "/mentor/mentees", icon: <Users className="h-4 w-4" /> },
+    { label: "Schedule", href: "/mentor/schedule", icon: <Calendar className="h-4 w-4" /> },
+  ],
   student: [
     { label: "Dashboard", href: "/dashboard" },
     { label: "Internships", href: "/student/internships" },
@@ -28,12 +34,6 @@ const roleBasedNavItems: Record<NonNullable<UserRole>, NavItem[]> = {
     { label: "Post Job", href: "/post-job" },
     { label: "Applications", href: "/applications" },
     { label: "Talent Pool", href: "/talent-pool" },
-  ],
-  mentor: [
-    { label: "Dashboard", href: "/mentor-dashboard" },
-    { label: "My Mentees", href: "/mentees" },
-    { label: "Schedule", href: "/schedule" },
-    { label: "Resources", href: "/resources" },
   ],
   "career-officer": [
     { label: "Dashboard", href: "/career-officer-dashboard" },
