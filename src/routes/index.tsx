@@ -73,6 +73,12 @@ import SearchResults from "@/pages/SearchResults";
 import ReportComplaint from "@/pages/ReportComplaint";
 import ComplaintStatus from "@/pages/ComplaintStatus";
 
+// Career Officer pages
+import InstitutionProfile from "@/pages/career-officer/InstitutionProfile";
+import StudentManagement from "@/pages/career-officer/StudentManagement";
+import OpportunityManagement from "@/pages/career-officer/OpportunityManagement";
+import CommunicationCenter from "@/pages/career-officer/CommunicationCenter";
+
 // Main routes
 export const mainRoutes: RouteObject[] = [
   { path: "/", element: <Index /> },
@@ -169,6 +175,14 @@ export const supportRoutes: RouteObject[] = [
   { path: "/complaint-status", element: <ComplaintStatus /> },
 ];
 
+// Career Officer routes
+export const careerOfficerRoutes: RouteObject[] = [
+  { path: "/career-officer/institution-profile", element: <InstitutionProfile /> },
+  { path: "/career-officer/students", element: <StudentManagement /> },
+  { path: "/career-officer/opportunities", element: <OpportunityManagement /> },
+  { path: "/career-officer/communication", element: <CommunicationCenter /> },
+];
+
 // Combine all routes
 export const routes: RouteObject[] = [
   ...mainRoutes,
@@ -180,4 +194,5 @@ export const routes: RouteObject[] = [
   ...paymentRoutes,
   ...communityRoutes,
   ...supportRoutes,
+  ...careerOfficerRoutes,
 ];

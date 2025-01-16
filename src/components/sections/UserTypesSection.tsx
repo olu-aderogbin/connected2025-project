@@ -66,10 +66,10 @@ export const UserTypesSection = () => {
             </Link>
           </div>
 
-          {/* Institution Representatives Card */}
+          {/* Career Officers Card */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
             <BookmarkCheck className="h-16 w-16 text-[#0EA5E9] mb-6" />
-            <h4 className="text-2xl font-bold mb-4">For Institutions</h4>
+            <h4 className="text-2xl font-bold mb-4">For Career Officers</h4>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-2">
                 <BarChart className="h-6 w-6 text-[#0EA5E9] flex-shrink-0" />
@@ -77,7 +77,7 @@ export const UserTypesSection = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Users className="h-6 w-6 text-[#0EA5E9] flex-shrink-0" />
-                <span>Post institutional opportunities</span>
+                <span>Manage institutional opportunities</span>
               </li>
               <li className="flex items-start gap-2">
                 <FileSpreadsheet className="h-6 w-6 text-[#0EA5E9] flex-shrink-0" />
@@ -89,7 +89,7 @@ export const UserTypesSection = () => {
               </li>
             </ul>
             <Link to="/signup" className="inline-block">
-              <Button className="bg-[#0EA5E9] hover:bg-[#0284C7]">Join as Institution</Button>
+              <Button className="bg-[#0EA5E9] hover:bg-[#0284C7]">Join as Career Officer</Button>
             </Link>
           </div>
 
