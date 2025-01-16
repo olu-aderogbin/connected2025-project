@@ -13,6 +13,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { BackToTop } from "@/components/BackToTop";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb";
 
+// Add loading="lazy" to all images in the page
 const Index = () => {
   return (
     <div className="min-h-screen bg-white" role="main">

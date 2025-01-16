@@ -1,27 +1,68 @@
-import { RouteObject } from "react-router-dom";
+import { lazy } from "react";
 import { mainRoutes } from "./main.routes";
-import { dashboardRoutes } from "./dashboard.routes";
 import { userRoutes } from "./user.routes";
-import { studentRoutes } from "./student.routes";
-import { freelancerRoutes } from "./freelancer.routes";
-import { employerRoutes } from "./employer.routes";
-import { paymentRoutes } from "./payment.routes";
+import { dashboardRoutes } from "./dashboard.routes";
 import { communityRoutes } from "./community.routes";
 import { supportRoutes } from "./support.routes";
-import { careerOfficerRoutes } from "./career-officer.routes";
+import { employerRoutes } from "./employer.routes";
+import { freelancerRoutes } from "./freelancer.routes";
 import { mentorRoutes } from "./mentor.routes";
+import { studentRoutes } from "./student.routes";
+import { careerOfficerRoutes } from "./career-officer.routes";
+import { paymentRoutes } from "./payment.routes";
 
-// Combine all routes
-export const routes: RouteObject[] = [
+// Lazy load all major route components
+const Index = lazy(() => import("../pages/Index"));
+const About = lazy(() => import("../pages/About"));
+const Blog = lazy(() => import("../pages/Blog"));
+const Contact = lazy(() => import("../pages/Contact"));
+const FAQ = lazy(() => import("../pages/FAQ"));
+const HelpCenter = lazy(() => import("../pages/HelpCenter"));
+const Signup = lazy(() => import("../pages/Signup"));
+const PasswordRecovery = lazy(() => import("../pages/PasswordRecovery"));
+
+export const routes = [
+  {
+    path: "/",
+    element: <Index />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/faq",
+    element: <FAQ />,
+  },
+  {
+    path: "/help",
+    element: <HelpCenter />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/password-recovery",
+    element: <PasswordRecovery />,
+  },
   ...mainRoutes,
-  ...dashboardRoutes,
   ...userRoutes,
-  ...studentRoutes,
-  ...freelancerRoutes,
-  ...employerRoutes,
-  ...paymentRoutes,
+  ...dashboardRoutes,
   ...communityRoutes,
   ...supportRoutes,
-  ...careerOfficerRoutes,
+  ...employerRoutes,
+  ...freelancerRoutes,
   ...mentorRoutes,
+  ...studentRoutes,
+  ...careerOfficerRoutes,
+  ...paymentRoutes,
 ];
