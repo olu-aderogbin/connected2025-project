@@ -67,9 +67,12 @@ const Signup = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-accent to-primary p-4">
       <div className="w-full max-w-4xl space-y-8 bg-white rounded-xl shadow-2xl p-8">
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-accent">Join ConnectED</h1>
-          <p className="text-gray-600">Choose your role to get started</p>
+        <div className="text-center space-y-6">
+          <img src="/logo-blue.png" alt="ConnectED" className="h-12 mx-auto" />
+          <div>
+            <h1 className="text-3xl font-bold text-accent">Join ConnectED</h1>
+            <p className="text-gray-600">Choose your role to get started</p>
+          </div>
         </div>
 
         {!selectedType ? (

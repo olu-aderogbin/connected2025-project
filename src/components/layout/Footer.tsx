@@ -6,11 +6,14 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-4">ConnectED</h4>
+            <Link to="/" className="inline-block mb-4">
+              <img src="/logo-orange.png" alt="ConnectED" className="h-8" />
+            </Link>
             <p className="text-accent-foreground/80">
               Empowering students to build successful careers through meaningful connections and opportunities.
             </p>
           </div>
+          
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-accent-foreground/80">
@@ -39,6 +42,7 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+        
         <div className="mt-12 pt-8 border-t border-accent-foreground/20 text-center text-accent-foreground/60">
           <p>© 2024 ConnectED. All rights reserved.</p>
         </div>

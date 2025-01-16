@@ -56,9 +56,8 @@ export const RoleBasedHeader = ({ userRole, userName, userAvatar }: RoleBasedHea
     <header className="bg-white border-b sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-8">
-          <Link to="/" className="text-2xl font-bold text-primary flex items-center gap-2">
-            <Globe className="h-6 w-6" />
-            ConnectED
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo-blue.png" alt="ConnectED" className="h-8" />
           </Link>
 
           {isLoggedIn && (
