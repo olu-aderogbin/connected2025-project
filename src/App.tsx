@@ -53,6 +53,10 @@ import Forums from "./pages/Forums";
 import ForumCategory from "./pages/ForumCategory";
 import Groups from "./pages/Groups";
 import SearchResults from "./pages/SearchResults";
+import ForumTopicDetail from "./pages/ForumTopicDetail";
+import NewForumTopic from "./pages/NewForumTopic";
+import GroupDetail from "./pages/GroupDetail";
+import CreateGroup from "./pages/CreateGroup";
 
 const queryClient = new QueryClient();
 
@@ -112,9 +116,13 @@ const App = () => (
           {/* Forum routes */}
           <Route path="/forums" element={<Forums />} />
           <Route path="/forums/category/:id" element={<ForumCategory />} />
+          <Route path="/forums/topic/:id" element={<ForumTopicDetail />} />
+          <Route path="/forums/new" element={<NewForumTopic />} />
           
           {/* Group routes */}
           <Route path="/groups" element={<Groups />} />
+          <Route path="/groups/:id" element={<GroupDetail />} />
+          <Route path="/groups/create" element={<CreateGroup />} />
           
           {/* Search routes */}
           <Route path="/search" element={<SearchResults />} />
