@@ -1,35 +1,56 @@
-# Welcome to your connectED frontend project
+
+# ConnectED Platform
 
 ## Project info
 
+A platform connecting students with career opportunities, mentors, and resources.
 
+## Deployment Instructions
 
-**Use your preferred IDE**
+### Prerequisites
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in lov001.
+### Building for Production
 
-The only requirement is having Node.js & npm installed - 
-[install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-1. Extract the ZIP file to a desired location on YOUR computer (You have done this already, that is why you can see this file)
-2. Open a terminal/command prompt in the extracted project folder
-3. Run these commands:
-
+1. Clone this repository
+2. Install dependencies:
+```
 npm install
-npm run dev
+```
+3. Build the project:
+```
+npm run build
+```
+4. The build files will be in the `dist` directory
 
+### Deploying to cPanel
 
-## What technologies are used for this project?
+1. Build the project using the steps above
+2. Compress the `dist` directory into a ZIP file
+3. Log in to your cPanel account
+4. Navigate to File Manager
+5. Upload and extract the ZIP file to your desired directory (typically `public_html`)
+6. If using React Router, configure `.htaccess` file (see below)
 
-This project is built with .
+### .htaccess Configuration for React Router
+
+Create an `.htaccess` file in your web root with the following content:
+
+```
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+```
+
+## Technologies Used
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
-
-
-
